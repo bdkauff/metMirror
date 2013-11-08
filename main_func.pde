@@ -1,30 +1,30 @@
-void metMirror() {
-  if (camera.available() == true) {
-    camera.read();
-  }
-
-  camera.loadPixels();
-
-  background(0);
-
-  for (int x=0;x<outXDim;x++) {
-    for (int y=0;y<outYDim;y++) {
-
-      int xPos = x*outWidth;
-      int yPos = y*outHeight;
-      int index = xPos+(yPos*width);
-
-      color thisColor = camera.pixels[index];
-      int matchIndex = findMatch(thisColor);
-
-      float rx = (noise((frameCount*speed)+(index)+((float)index/camera.pixels.length))-.5)*rAmount;
-      float ry = (noise((frameCount*speed)+(index)+((float)index/camera.pixels.length)+200)-.5)*rAmount;
-
-      //image(faces[matchIndex], xPos+rx, yPos+ry, outWidth, outHeight);
-    }
-  }
-  camera.updatePixels();
-}
+//void metMirror() {
+//  if (camera.available() == true) {
+//    camera.read();
+//  }
+//
+//  camera.loadPixels();
+//
+//  background(0);
+//
+//  for (int x=0;x<outXDim;x++) {
+//    for (int y=0;y<outYDim;y++) {
+//
+//      int xPos = x*outWidth;
+//      int yPos = y*outHeight;
+//      int index = xPos+(yPos*width);
+//
+//      color thisColor = camera.pixels[index];
+//      int matchIndex = findMatch(thisColor);
+//
+//      float rx = (noise((frameCount*speed)+(index)+((float)index/camera.pixels.length))-.5)*rAmount;
+//      float ry = (noise((frameCount*speed)+(index)+((float)index/camera.pixels.length)+200)-.5)*rAmount;
+//
+//      image(faces[matchIndex], xPos+rx, yPos+ry, outWidth, outHeight);
+//    }
+//  }
+//  camera.updatePixels();
+//}
 
 ////////////////////////////////////////////
 ////////////////////////////////////////////

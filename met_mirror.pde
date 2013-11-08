@@ -1,5 +1,5 @@
 import processing.video.*;
-public Capture camera;
+
 
 //andy's filter stuff: 
 int faceSize = 6;              //changes the resolution (# of faces drawn)
@@ -16,11 +16,14 @@ int outXDim = 640/outWidth;
 int outYDim = 480/outHeight;
 boolean snap = false;
 
+Capture video;
 
 void setup() {
-  size(640, 480,P2D);
+  size(640, 480);
+  frameRate(30);
   master = loadImage("mkHalf.png");
-  createFaces();//for Andy's filter
+  //master = loadImage("mortalKombat.png");
+  createFaces();
 
   String[] cameras = Capture.list();
 
@@ -29,17 +32,46 @@ void setup() {
     exit();
   } 
   else {
-    println("Available cameras:");
+    println("Available videos:");
     for (int i = 0; i < cameras.length; i++) {
-      println(cameras[i]);
+      println(i+":    "+ cameras[i]);
     }
-    camera = new Capture(this, cameras[0]);
-    camera.start();
+
+
+    video = new Capture(this, width, height);
+    video.start();
+
+    background(0);
   }
 }
 
 void draw() {
-  metMirror();
-  set(0, 0, camera);
+
+  if (video.available()) {
+    video.read();
+    video.loadPixels();
+
+
+    for (int x=0;x<outXDim;x++) {
+      for (int y=0;y<outYDim;y++) {
+
+        int xPos = x*outWidth;
+        int yPos = y*outHeight;
+        int index = xPos+(yPos*width);
+
+        color thisColor = video.pixels[index];
+        int matchIndex = findMatch(thisColor);
+
+        float rx = (noise((frameCount*speed)+(index)+((float)index/video.pixels.length))-.5)*rAmount;
+        float ry = (noise((frameCount*speed)+(index)+((float)index/video.pixels.length)+200)-.5)*rAmount;
+
+        //pixels[index] = thisColor;
+        image(faces[matchIndex], xPos+rx, yPos+ry, outWidth, outHeight);
+      }
+    }
+
+
+    updatePixels();
+  }
 }
 
