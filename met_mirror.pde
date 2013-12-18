@@ -4,7 +4,7 @@ import processing.video.*;
 //andy's filter stuff: 
 int faceSize = 6;              //changes the resolution (# of faces drawn)
 float speed = 0.03;            //changes how fast they wiggle
-float rAmount = 26;            //changes how much they wiggle
+float rAmount = 16;            //changes how much they wiggle
 int xDim = 23;
 int yDim = 12;
 PImage[] faces = new PImage[xDim*yDim];
