@@ -12,14 +12,14 @@ PImage master;
 Pic[] pics = new Pic[xDim*yDim];
 int outWidth = faceSize*3;
 int outHeight = faceSize*5;
-int outXDim = 640/outWidth;
-int outYDim = 480/outHeight;
+int outXDim = 1280/outWidth;
+int outYDim = 960/outHeight;
 boolean snap = false;
 
 Capture video;
 
 void setup() {
-  size(640, 480);
+  size(1280, 960);
   frameRate(30);
   master = loadImage("mkHalf.png");
   //master = loadImage("mortalKombat.png");
