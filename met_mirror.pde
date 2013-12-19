@@ -2,9 +2,9 @@ import processing.video.*;
 
 
 //andy's filter stuff: 
-int faceSize = 6;              //changes the resolution (# of faces drawn)
+int faceSize = 8;              //changes the resolution (# of faces drawn)
 float speed = 0.03;            //changes how fast they wiggle
-float rAmount = 16;            //changes how much they wiggle
+float rAmount = 50;            //changes how much they wiggle
 int xDim = 23;
 int yDim = 12;
 PImage[] faces = new PImage[xDim*yDim];
@@ -13,16 +13,16 @@ Pic[] pics = new Pic[xDim*yDim];
 int outWidth = faceSize*3;
 int outHeight = faceSize*5;
 int outXDim = 1280/outWidth;
-int outYDim = 960/outHeight;
+int outYDim = 720/outHeight;
 boolean snap = false;
 
 Capture video;
 
 void setup() {
-  size(1280, 960);
+  size(1280, 720);
   frameRate(30);
-  master = loadImage("mkHalf.png");
-  //master = loadImage("mortalKombat.png");
+  //master = loadImage("mkHalf.png");
+  master = loadImage("/Users/Ben/Documents/Processing/met_mirror/data/output_small_2.jpg");
   createFaces();
 
   String[] cameras = Capture.list();
@@ -41,7 +41,7 @@ void setup() {
     video = new Capture(this, width, height);
     video.start();
 
-    background(0);
+    background(255);
   }
 }
 
