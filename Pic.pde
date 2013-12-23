@@ -12,7 +12,7 @@ class Pic {
     pic.loadPixels();
 
     for (int i=0;i<pic.pixels.length;i++) {
-      if (brightness(pic.pixels[i])>0 && brightness(pic.pixels[i])<250) {
+      if (brightness(pic.pixels[i])>25 && brightness(pic.pixels[i])<255) {
         tRed += red(pic.pixels[i]);
         tGreen += green(pic.pixels[i]);
         tBlue += blue(pic.pixels[i]);
@@ -28,3 +28,4 @@ class Pic {
     avgC = color(avgRed, avgGreen, avgBlue);
   }
 }
+

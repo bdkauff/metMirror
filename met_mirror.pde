@@ -2,7 +2,7 @@ import processing.video.*;
 
 
 //andy's filter stuff: 
-int faceSize = 8;              //changes the resolution (# of faces drawn)
+int faceSize = 7;              //changes the resolution (# of faces drawn)
 float speed = 0.03;            //changes how fast they wiggle
 float rAmount = 50;            //changes how much they wiggle
 int xDim = 23;
@@ -13,13 +13,13 @@ Pic[] pics = new Pic[xDim*yDim];
 int outWidth = faceSize*3;
 int outHeight = faceSize*5;
 int outXDim = 1280/outWidth;
-int outYDim = 720/outHeight;
+int outYDim = 800/outHeight;
 boolean snap = false;
 
 Capture video;
 
 void setup() {
-  size(1280, 720);
+  size(1280, 800);
   frameRate(30);
   //master = loadImage("mkHalf.png");
   master = loadImage("/Users/Ben/Documents/Processing/met_mirror/data/output_small_2.jpg");
