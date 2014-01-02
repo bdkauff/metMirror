@@ -1,6 +1,4 @@
 *.DS_Store
 /image_data
-<<<<<<< HEAD
-=======
 build-tmp
->>>>>>> e3c724a7de3de8fe7a95cf8fa31c4a49f30565c8
+
