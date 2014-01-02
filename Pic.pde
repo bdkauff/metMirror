@@ -28,4 +28,3 @@ class Pic {
     avgC = color(avgRed, avgGreen, avgBlue);
   }
 }
-
