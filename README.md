@@ -4,6 +4,6 @@ Met Mirror is an interactive installation prototype that encourages Metropolitan
 
 This prototype could easily be augmented with an automated feed of images, say from the Met's website, to create customized installations for exhibitions, special events and educational programs.
 
-NB: Inspired and built off of the talented [Andy Sigler's] (https://github.com/andySigler) Street Fighter Mirror.
+NB: Inspired and built off of the talented [Andy Sigler's] (https://github.com/andySigler) Street Fighter sketch.
 
 
