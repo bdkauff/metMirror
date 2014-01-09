@@ -13,13 +13,13 @@ Pic[] pics = new Pic[xDim*yDim];
 int outWidth = faceSize*3;
 int outHeight = faceSize*5;
 int outXDim = 1280/outWidth;
-int outYDim = 960/outHeight;
+int outYDim = 800/outHeight;
 boolean snap = false;
 
 Capture video;
 
 void setup() {
-  size(1280, 960);
+  size(1280, 800);
   frameRate(30);
   master = loadImage("./data/output_small_2.jpg");
   createFaces();
